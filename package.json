@@ -1,0 +1,16 @@
+{
+	"name": "assignment",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"format": "prettier --config ./.prettierrc --write \"**/*.ts\"",
+		"start": "npm run build && node dist/server",
+		"build": "tsc",
+		"start-dev": "PORT=9001 ts-node ./src/server.ts",
+		"tslint": "tslint -c tslint.json -p tsconfig.json",
+		"watch-debug": "npm run tslint && PORT=9001 ts-node-dev --inspect --respawn --transpileOnly ./src/server.ts",
+		"test": "PORT=9001 jest --coverage"
+	},
+	"author": "Pavel Kutáč",
+	"license": "ISC"
+}
